@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310015008) do
+ActiveRecord::Schema.define(version: 20150310025244) do
+
+  create_table "flits", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.string   "message",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
+    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

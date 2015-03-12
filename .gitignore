@@ -15,5 +15,3 @@
 /log/*.log
 /tmp
 /log/development.log
-
-/config/secrets.yml
