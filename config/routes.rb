@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get 'welcome/about'
+  get 'about' => 'welcome#about'
 
   root to: 'welcome#index'
 
