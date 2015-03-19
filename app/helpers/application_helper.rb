@@ -1,5 +1,5 @@
 module ApplicationHelper
   def current_user
-    User.find
+    User.find(session[:current_user_id])
   end
 end
