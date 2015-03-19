@@ -5,11 +5,4 @@ class User < ActiveRecord::Base
   
   has_secure_password
   has_many :flits, dependent: :destroy
-
-  def add_friend(friend)
-    friendship = friendships.build(:friend_id => friend.id)
-    if !friendship.save
-      logger.debug "User '#{friend.email}' is already a friend."
-  end
-end
 end
