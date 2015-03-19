@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
     friendship = friendships.build(:friend_id => friend.id)
     if !friendship.save
       logger.debug "User '#{friend.email}' is already a friend."
+    end
   end
-end
 end
