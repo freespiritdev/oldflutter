@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
       flash[:notice] = "You Successfully Logged in "
       redirect_to root_url
     else
-      flash.now[:error] = "Something's wrong!"
+      flash.now[:error] = "Something went wrong!"
       render :action => 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = "You have been logged out, Goodbye!"
     redirect_to root_url
   end
 end
