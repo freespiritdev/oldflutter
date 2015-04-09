@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
       flash[:notice] = "You are now friends."
       redirect_to root_url
     else
-      flash[:error] = "Error occurred, try adding friend again"
+      flash[:error] = "Oops something isn't right, try again"
       redirect_to root_url
     end
   end
