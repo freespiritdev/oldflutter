@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :friendships
+  resources :main
 
   get 'about' => 'welcome#about'
 
