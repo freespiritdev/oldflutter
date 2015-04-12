@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :friendships
   resources :main
+  resources :flits
 
   get 'about' => 'welcome#about'
 
