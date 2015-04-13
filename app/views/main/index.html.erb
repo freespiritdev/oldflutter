@@ -1,7 +1,9 @@
 <h1> I am the <em>Main</em> page</h1>
 
-<% form_for Flit.new do |f| %>
+<%= simple_form_for Flit.new do |f| %>
   <%= f.text_field :message %>
-  <% f.submit "Update" %>
+  <% f.submit "Update", class: 'btn btn-info' %>
 <% end %>
+
+
 <h3>BOOM!!</h3>
