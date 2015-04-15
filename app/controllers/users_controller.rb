@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thanks for joining!"
-      redirect_to root_url
+      redirect_to @user
     else
       render :new
     end
@@ -33,6 +33,11 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
   end
   
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
   
 
 private
