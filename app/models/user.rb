@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :friendships
   
   has_secure_password
+  validates :password, length: { minimum: 5 }
   has_many :flits, dependent: :destroy
 
   def add_friend(friend)
