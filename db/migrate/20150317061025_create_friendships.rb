@@ -4,7 +4,7 @@ class CreateFriendships < ActiveRecord::Migration
       t.integer :user_id
       t.integer :friend_id
 
-      t.timestamps
+      t.timestamps null: true
     end
   end
 end

@@ -1,14 +1,9 @@
 <h1>All flits go here</h1>
 
-
-
-
 <%= simple_form_for Flit.new do |f| %>
   <%= f.text_field :message %>
-  <% f.submit "Update", class: 'btn btn-info' %>
+  <%= f.submit "Update", class: 'btn btn-info' %>
 <% end %>
 
-<% flits.each do |flit| %>
-<%= flit.message %>
-<% end %>
+   
 
