@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   def index
     @users = User.order(:username)
@@ -40,9 +40,12 @@ class UsersController < ApplicationController
   
 
 private
-
-  def set_user
-    @user = User.find(params[:id])
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in"
+      store_location
+      redirect_to users_url
+    end
   end
   
   def user_params

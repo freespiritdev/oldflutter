@@ -2,8 +2,8 @@ class FlitsController < ApplicationController
   before_action :set_flit, only: [:show,:edit, :update, :destroy]
   
   def create
-    @flit = Flit.new(flit_params) #current_user.flits.build(flit_params)
-    if @flit.save
+    flit = Flit.new(flit_params) #current_user.flits.build(flit_params)
+    if flit.save!
       redirect_to root_url
     else
       render 'new'
