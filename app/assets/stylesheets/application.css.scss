@@ -8,8 +8,15 @@ body {
   height:100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
 h1 {
-  color: #33CCFF;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 h3{
@@ -24,3 +31,4 @@ h3{
   left:0;
   background:#FFFFFF;
 }
+
