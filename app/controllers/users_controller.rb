@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+   #before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
    before_action :admin_user,     only: :destroy
 
   def index
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thanks for joining!"
-      redirect_to @user
+      redirect_to root_url
     else
       render :new
     end
@@ -41,13 +41,14 @@ class UsersController < ApplicationController
   
 
 private
-  def logged_in_user
+=begin def logged_in_user
     unless logged_in?
       flash[:danger] = "Please log in"
       store_location
       redirect_to users_url
     end
   end
+=end
   
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)
