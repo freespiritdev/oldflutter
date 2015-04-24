@@ -8,7 +8,6 @@ class FlitsController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def destroy
@@ -23,7 +22,5 @@ class FlitsController < ApplicationController
 
     def flit_params
       params.require(:flit).permit(:message)
-
-    
-   end
+    end
 end
