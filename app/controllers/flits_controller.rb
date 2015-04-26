@@ -2,12 +2,13 @@ class FlitsController < ApplicationController
   before_action :set_flit, only: [:show,:edit, :update, :destroy]
   
   def create
-    flit = Flit.new(flit_params) #current_user.flits.build(flit_params)
+    @flit = Flit.new(flit_params) #current_user.flits.build(flit_params)
     if flit.save!
       redirect_to root_url
     else
       render 'new'
     end
+
   end
 
   def destroy
@@ -22,5 +23,7 @@ class FlitsController < ApplicationController
 
     def flit_params
       params.require(:flit).permit(:message)
-    end
+
+    
+   end
 end

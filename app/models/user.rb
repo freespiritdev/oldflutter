@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    attr_accessor :username, :email
   validates :username, presence: true, uniqueness: true
   has_many :friendships
   has_many :friends, :through => :friendships
